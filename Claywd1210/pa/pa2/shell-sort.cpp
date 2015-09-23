@@ -7,8 +7,10 @@
 //============================================================================
 
 #include "sort.h"
+#include <iostream>
 
-void ShellSort(int A[], int size)
+void
+ShellSort::sort(int A[], int size)
 {
   /* Complete this function with the implementation of shell sort algorithm 
   Record number of comparisons in variable num_cmps of class Sort

@@ -6,7 +6,7 @@
 //============================================================================
 
 #include "sort.h"
-using namespace std;
+
  
 //get max value in array
 int getMax(int* arr, int n)
@@ -45,7 +45,7 @@ void countSort(int* arr, int n, int digit)
 }
 
 // Uses modified counting sort and getMax to perform radix sort.
-void radixSort(int* arr, int n)
+void RadixSort::sort(int* arr, int n)
 {
     // Find the maximum number
     int max = getMax(arr, n);

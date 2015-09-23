@@ -8,8 +8,10 @@
 
 #include "sort.h"
 
-void InsertionSort(int A[], int size)				// main entry point
+void
+InsertionSort::sort(int A[], int size)				// main entry point
 {
+	
   /* Complete this function with the implementation of insertion sort algorithm 
   Record number of comparisons in variable num_cmps of class Sort
   */
@@ -17,8 +19,11 @@ void InsertionSort(int A[], int size)				// main entry point
   {
 	int tmp = A[k];
 	int j = k;
-	for (; j > 0 && tmp < A[j-1]; j--)
+	num_cmps++;
+	for (; j > 0 && tmp < A[j-1]; j--){
+		if (j!=k) num_cmps++;
 		A[j] = A[j-1];
+	}
 	A[j] = tmp;
   }
 }
