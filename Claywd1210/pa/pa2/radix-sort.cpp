@@ -9,7 +9,7 @@
 using namespace std;
  
 //get max value in array
-int getMax(int arr[], int n)
+int getMax(int* arr, int n)
 {
     int maxInt = arr[0];
     for (int i = 1; i < n; i++)
@@ -19,7 +19,7 @@ int getMax(int arr[], int n)
 }
 
 //modify counting sort for radix sort by looking at digit
-void countSort(int arr[], int n, int digit)
+void countSort(int* arr, int n, int digit)
 {
     int output[n]; // output array
     int i, placeCount[10] = {0};
@@ -45,7 +45,7 @@ void countSort(int arr[], int n, int digit)
 }
 
 // Uses modified counting sort and getMax to perform radix sort.
-void radixsort(int arr[], int n)
+void radixSort(int* arr, int n)
 {
     // Find the maximum number
     int max = getMax(arr, n);
