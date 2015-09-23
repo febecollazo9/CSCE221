@@ -19,10 +19,10 @@ InsertionSort::sort(int A[], int size)				// main entry point
   {
 	int tmp = A[k];
 	int j = k;
-	num_cmps++;
+	++num_cmps;			//account for comparison in for loop
 	for (; j > 0 && tmp < A[j-1]; j--){
-		if (j!=k) num_cmps++;
 		A[j] = A[j-1];
+		if (j!=k) ++num_cmps;	//account for comparison in for loop
 	}
 	A[j] = tmp;
   }

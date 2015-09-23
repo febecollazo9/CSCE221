@@ -18,6 +18,21 @@ int getMax(int* arr, int n)
     return maxInt;
 }
 
+void checkNeg(int* arr, int n)
+{
+    int makeZero=0;
+    
+    for (int i =0; i<n; ++i)
+    {
+        if (arr[i] < 0 && arr[i] < makeZero) makeZero=arr[i];
+    }
+    
+    if (makeZero < 0)
+    {
+       for (int i=0; i<n; ++i) arr[i] += abs(makeZero);
+    } 
+}
+
 //modify counting sort for radix sort by looking at digit
 void countSort(int* arr, int n, int digit)
 {
@@ -47,6 +62,8 @@ void countSort(int* arr, int n, int digit)
 // Uses modified counting sort and getMax to perform radix sort.
 void RadixSort::sort(int* arr, int n)
 {
+    //check for negative number
+    checkNeg(arr, n);
     // Find the maximum number
     int max = getMax(arr, n);
  

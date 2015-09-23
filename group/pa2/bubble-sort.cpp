@@ -15,9 +15,12 @@ BubbleSort::sort(int A[], int size)			// main entry point
      Record number of comparisons in variable num_cmps of class Sort
   */
 	for (int k = 1; k < size; k++) {
+		++num_cmps;		//account for comparison in for loop statement
 		bool cont = false;
 		for (int j = 0; j < size - k; j++)
+			++num_cmps;		//account for comparison in nested for loop statement
 			if (A[j+1] < A[j]) {
+				++num_cmps;		//account for comparison in if statement
 				int tmp = A[j]; // swap A[j] and A[j+1]
 				A[j] = A[j+1];
 				A[j+1] = tmp;

@@ -19,9 +19,10 @@ ShellSort::sort(int A[], int size)
   int next_gap;
   for (; gap > 1; gap = next_gap){
 	for (int i = gap; i < size; i++){
+		++num_cmps;		//increment count of comparisions for if statement
 		int tmp = A[i];
 		int j = i;
-		while (j >= gap && tmp < A[j-gap]){
+		while (j >= gap && (++num_cmps, tmp < A[j-gap])){	//accounted for comparison in while satement
 			A[j] = A[j-gap];
 			j -= gap;
 		}
