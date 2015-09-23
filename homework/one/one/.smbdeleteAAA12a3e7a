@@ -1,0 +1,8 @@
+all: game.o main.o
+	g++ -std=c++11 game.o player.o main.o -o main
+game.o: game.cpp game.h player.h
+	g++ -std=c++11 game.cpp
+main.o: main.cpp game.h player.h
+	g++ -std=c++11 main.cpp
+clean:
+	rm *.o main.out
