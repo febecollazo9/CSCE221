@@ -18,7 +18,7 @@ BubbleSort::sort(int A[], int size)			// main entry point
 		++num_cmps;		//account for comparison in for loop statement
 		bool cont = false;
 		for (int j = 0; j < size - k; j++)
-			++num_cmps;		//account for comparison in nested for loop statement
+		{	++num_cmps;		//account for comparison in nested for loop statement
 			if (A[j+1] < A[j]) {
 				++num_cmps;		//account for comparison in if statement
 				int tmp = A[j]; // swap A[j] and A[j+1]
@@ -26,6 +26,7 @@ BubbleSort::sort(int A[], int size)			// main entry point
 				A[j+1] = tmp;
 				cont = true;
 			}
+		}
 		if (!cont) break; // stop sorting
 	}
 }
